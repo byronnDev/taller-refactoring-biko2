@@ -22,16 +22,11 @@ function TaskManager() {
     });
   }
 
-  function getLastTask() {
-    return tasks[tasks.length - 1];
-  }
-
   return {
     addTask,
     completeTask,
     deleteTask,
     displayTasks,
-    getLastTask,
   };
 }
 

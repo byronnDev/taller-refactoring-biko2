@@ -20,23 +20,9 @@ function EmployeeManager() {
     return totalSalary;
   }
 
-  function calculateBonus(employee) {
-    return bonus;
-  }
-
-  function determineBonusPercentage(yearsOfService, performanceRating) {
-    if (yearsOfService >= 5 && performanceRating > 4) {
-      return 0.2;
-    } else {
-      return 0.1;
-    }
-  }
-
   return {
     addEmployee,
     calculateSalary,
-    calculateBonus,
-    determineBonusPercentage,
   };
 }
 

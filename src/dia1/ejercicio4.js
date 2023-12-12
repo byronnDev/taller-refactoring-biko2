@@ -3,16 +3,13 @@ function AuthenticationManager() {
   let username = "";
 
   function login(user, password) {
-    if (user === "admin" && password === "admin123") {
+    const isAdminUser = (user === "admin" && password === "admin123");
+
+    if (isAdminUser) {
       isLoggedIn = true;
       username = "admin";
-    } else {
-      isLoggedIn = false;
-      username = "";
+      return;
     }
-  }
-
-  function logout() {
     isLoggedIn = false;
     username = "";
   }
@@ -20,14 +17,13 @@ function AuthenticationManager() {
   function displayStatus() {
     if (isLoggedIn) {
       console.log(`Logged in as ${username}`);
-    } else {
-      console.log("Not logged in");
+      return;
     }
+    console.log("Not logged in");
   }
 
   return {
     login,
-    logout,
     displayStatus,
   };
 }

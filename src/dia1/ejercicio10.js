@@ -1,17 +1,17 @@
+function createElement(elementType, text) {
+  const element = document.createElement(elementType);
+  element.textContent = text;
+  document.body.appendChild(element);
+}
+
 function crearEncabezado(texto) {
-  const encabezado = document.createElement("h1");
-  encabezado.textContent = texto;
-  document.body.appendChild(encabezado);
+  createElement("h1", texto);
 }
 
 function crearParrafo(texto) {
-  const parrafo = document.createElement("p");
-  parrafo.textContent = texto;
-  document.body.appendChild(parrafo);
+  createElement("p", texto);
 }
 
 function crearLista(texto) {
-  const list = document.createElement("li");
-  list.textContent = texto;
-  document.body.appendChild(list);
+  createElement("li", texto);
 }

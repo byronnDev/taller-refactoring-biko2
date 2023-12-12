@@ -16,7 +16,7 @@ function BookManager() {
     console.log("All Books:");
     books.forEach((book) => {
       displayBookDetails(book);
-      console.log("----------------------");
+      addLine()
     });
   }
 
@@ -25,7 +25,7 @@ function BookManager() {
     console.log(`Books in ${genre} genre:`);
     filteredBooks.forEach((book) => {
       displayBookDetails(book);
-      console.log("----------------------");
+      addLine()
     });
   }
 
@@ -34,6 +34,10 @@ function BookManager() {
     displayAllBooks,
     filterBooksByGenre,
   };
+}
+
+function addLine() {
+  console.log("----------------------");
 }
 
 const bookManager = BookManager();
@@ -58,5 +62,5 @@ bookManager.addBook({
 });
 
 bookManager.displayAllBooks();
-console.log("----------------------");
+addLine()
 bookManager.filterBooksByGenre("Fiction");

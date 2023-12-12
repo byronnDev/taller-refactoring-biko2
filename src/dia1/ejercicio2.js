@@ -1,16 +1,14 @@
 const CANARIAS_IVA = 1.07;
+const PENINSULA_IVA = 1.21;
 
-function valor(n, l) {
-  var value;
-  if (l === "peninsula") {
-    // Calcular el precio con el IVA de la Peninsula
-    value = n * (1 + 0.21);
-  } else if (l === "canarias") {
-    // Calcular el precio con el IVA de Canarias
-    value = n * (1 + 0.7);
+function calcularPrecioConIVA(precioSinIVA, lugar) {
+  if (lugar === "peninsula") {
+    return precioSinIVA * PENINSULA_IVA;
   }
-
-  return value;
+  if (lugar === "canarias") {
+    return precioSinIVA * CANARIAS_IVA;
+  }
+  return precioSinIVA;
 }
 
 const res = valor(50, "peninsula");

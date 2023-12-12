@@ -2,9 +2,9 @@
 function calcularPrecioTotalConDescuento(productos) {
   let precioTotal = 0;
 
-  for (let i = 0; i < productos.length; i++) {
+  for (let producto in productos) {
     const precioConDescuento =
-      productos[i].precio * (1 - productos[i].descuento);
+      producto.precio * (1 - producto.descuento);
     precioTotal += precioConDescuento;
   }
 
@@ -15,8 +15,8 @@ function calcularPrecioTotalConDescuento(productos) {
 function calcularPrecioTotalSinDescuento(productos) {
   let precioTotal = 0;
 
-  for (let i = 0; i < productos.length; i++) {
-    precioTotal += productos[i].precio;
+  for (let producto in productos) {
+    precioTotal += producto.precio;
   }
 
   return precioTotal;

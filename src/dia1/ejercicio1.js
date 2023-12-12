@@ -2,13 +2,15 @@
 
 let num = [80, 90, 75, 95, 88];
 
-function f(arr) {
+function calculateAverage(calificaciones) {
   let sum = 0;
-  for (let i = 0; i < arr.length; i++) {
-    sum += arr[i];
+
+  for (let calificacion in calificaciones) {
+    sum += calificacion;
   }
-  return sum / arr.length;
+
+  return sum / calificaciones.length;
 }
 
-const average = f(num);
+const average = calculateAverage(num);
 console.log(average);
