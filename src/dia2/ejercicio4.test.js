@@ -16,3 +16,14 @@ function calculateFinalPrice(price, place) {
 }
 
 //Añade los test
+describe("calculateFinalPrice", () => {
+  it("should return price with IVA when place is peninsula", () => {
+    const result = calculateFinalPrice(100, "peninsula");
+    expect(result).toBe(121);
+  });
+
+  it("should return price with IVA when place is canarias", () => {
+    const result = calculateFinalPrice(100, "canarias");
+    expect(result).toBe(107);
+  });
+});
