@@ -46,12 +46,12 @@ describe('lookup', () => {
   it('should return undefined if the user is not found', () => {
     const userName = 'non-existent';
     const expectedResult = "Could not find user";
-    expect(() => lookup(userName, 'firstName')).toThrowError(expectedResult);
+    expect(() => lookup(userName, 'firstName')).toThrow(expectedResult);
   });
 
   it('should throw an error if the property does not exist in the user object', () => {
     const userName = 'knuth';
     const expectedError = new Error("Could not find property");
-    expect(() => lookup(userName, 'nonexistentProperty')).toThrowError(expectedError);
+    expect(() => lookup(userName, 'nonexistentProperty')).toThrow(expectedError);
   });
 });
