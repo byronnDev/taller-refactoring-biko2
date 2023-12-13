@@ -35,3 +35,23 @@ const lookup = (userName, property) => {
 
   return user[property];
 };
+
+describe('lookup', () => {
+  it('should return the user object', () => {
+    const userName = 'knuth';
+    const expectedUser = users.find((user) => user.userName === userName);
+    expect(lookup(userName, 'firstName')).toEqual(expectedUser.firstName);
+  });
+
+  it('should return undefined if the user is not found', () => {
+    const userName = 'non-existent';
+    const expectedResult = "Could not find user";
+    expect(() => lookup(userName, 'firstName')).toThrowError(expectedResult);
+  });
+
+  it('should throw an error if the property does not exist in the user object', () => {
+    const userName = 'knuth';
+    const expectedError = new Error("Could not find property");
+    expect(() => lookup(userName, 'nonexistentProperty')).toThrowError(expectedError);
+  });
+});
