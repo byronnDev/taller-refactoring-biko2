@@ -1,4 +1,12 @@
-const { Shop } = require('./gildRose');
+const { Shop, Item } = require('./gildRose');
+
+describe('Item', () => {
+    it('should return a new item object', () => {
+        const item = new Item('Aged Brie', 10, 20);
+
+        expect(item).toEqual({ name: 'Aged Brie', sellIn: 10, quality: 20 });
+    });
+});
 
 describe('Shop', () => {
     it('should update the quality of items correctly', () => {
