@@ -4,6 +4,12 @@ const SELLIN_MIN = 0;
 const SELLIN_MID = 5;
 const SELLIN_MAX = 10;
 
+/**
+ * Represents an item in a shop.
+ * @property {string} name - The name of the item
+ * @property {number} sellIn - The number of days left to sell the item
+ * @property {number} quality - The quality of the item
+ */
 class Item {
   constructor(name, sellIn, quality) {
     this.name = name;
